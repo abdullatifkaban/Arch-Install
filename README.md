@@ -239,7 +239,7 @@ systemctl enable NetworkManager
 ### Önyükleyici Kurulumu
 
 > [!WARNING]
-> Öncelikle `lsblk` ile disk bölümlerinin doğru bağlandığından emin olalım. Eğer sda1 bağlı değil ise `mount /dev/sda1 /boot/efi` komutu ile bağlamanız gerekebilir.
+> Öncelikle `lsblk` ile disk bölümlerinin doğru bağlandığından emin olalım. Eğer sda1 bağlı değil ise [Dosya Sistemlerini Disk Bölümlerine Bağlama](#dosya-sistemlerini-disk-bölümlerine-bağlama) adımına geri dönüp o aşamada işlemlerin doğru yapıldığından emin olmak gerekiyor.
 
 Ön yükleyici için `Grub` kurulumu ve tanımlamalarını yapalım:
 ```
