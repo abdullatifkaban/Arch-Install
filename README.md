@@ -102,18 +102,21 @@ mkfs.ext4 /dev/sda3
 
 Oluşturduğumuz disk bölümlerine uygun dosya sistemlerini bağlayalım.
 
-1. **boot** bölümünü yeni bir klasör açıp oraya bağlayalım:
+> [!WARNING]
+> Burada sıralama önemli. Önce kök (/) bölümünü bağlayıp sonra boot bağlamak gerekiyor. Aksi halde boot için yapılan mount işlemi düzgün çalışmıyor.
+
+1. **root** bölümünü `/mnt` klasörüne bağlayalım:
+```
+# mount /dev/sda3 /mnt
+```
+2. **boot** bölümünü yeni bir klasör açıp oraya bağlayalım:
 ```
 mkdir -p /mnt/boot/efi
 mount /dev/sda1 /mnt/boot/efi
 ```
-2. **swap** bölümünü etkinleştirelim:
+3. **swap** bölümünü etkinleştirelim:
 ```
 swapon /dev/sda2
-```
-3. **root** bölümünü `/mnt` klasörüne bağlayalım:
-```
-# mount /dev/sda3 /mnt
 ```
 Son durumu yine `lsblk' ile kontrol ediyoruz. Sonuç aşağıdaki gibi olmalıdır:
 
@@ -177,7 +180,7 @@ LANG=tr_TR.UTF-8
 
 `vconsole.conf` dosyasını düzenleyerek klavye düzenini değiştirelim ve bu düzeni kalıcı hâle getirelim:
 ```
-/etc/vconsole.conf
+nano /etc/vconsole.conf
 ---------------------
 KEYMAP=trq
 ```
