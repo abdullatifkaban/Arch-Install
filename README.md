@@ -29,7 +29,7 @@ loadkeys trq
 ### Sistem saati ayarı
 Sistem saatinin senkronize olduğunu sağlamak için `timedatectl` komutu kullanılır. `set-timezone` parametresi ile saat dilimini İstanbul olarak ayarlayalım.
 ```
-timedatectl set-timezone Europa/Istanbul
+timedatectl set-timezone Europe/Istanbul
 ```
 ### Disk Bölümleme
 Sistemin kurulacağı disk bölümünü oluşturmadan önce `lsblk` komutu ile mevcut yapıyı bir görelim.
